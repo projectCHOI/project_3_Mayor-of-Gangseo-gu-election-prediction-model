@@ -83,3 +83,34 @@ for bar, y_value in zip(bars, y_values):
 plt.title('후보별 댓글 수')
 plt.ylabel('댓글 수')
 plt.show()
+
+# 후보별 댓글수 비율 파이 차트 시각화
+plt.figure(figsize=(6, 6))
+plt.pie(y_values, labels=x_labels, autopct='%1.1f%%', startangle=90, colors=['skyblue','lightcoral','yellow'])
+plt.title('후보별 댓글수 비율')
+plt.show()
+
+# 후보별 중복 댓글 비율 막대 그래프 시각화
+# (데이터 준비 및 막대 그래프 생성)
+y_values = [((23061-840)/23061)*100, ((25208-970)/25208)*100, ((16857-592)/16857)*100]
+bars = plt.bar(x_labels, y_values, color=['skyblue', 'lightcoral', 'yellow'])
+for bar, y_value in zip(bars, y_values):
+    plt.text(bar.get_x() + bar.get_width() / 2 - 0.1, bar.get_height() / 2, f"{y_value:.2f}%", ha='center', va='center')
+
+plt.title('후보별 중복 댓글 비율')
+plt.ylabel('백분율')
+plt.show()
+
+# pandas 출력 옵션 설정
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+
+# 댓글 길이에 따른 데이터 정렬 및 출력
+df_jin_sorted = df_jin.sort_values(by='댓글 길이', ascending=False)
+df_kim_sorted = df_kim.sort_values(by='댓글 길이', ascending=False)
+df_kwon_sorted = df_kwon.sort_values(by='댓글 길이', ascending=False)
+
+# 필터링된 댓글 출력
+filtered_df_kim = df_kim[df_kim['댓글'].str.contains('김태우')]
+print(filtered_df_kim["동영상 제목"].count())
+filtered_df_kim[["댓글", "예측 감정"]].head(50)
