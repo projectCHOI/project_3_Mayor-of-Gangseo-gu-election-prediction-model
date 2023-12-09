@@ -1,5 +1,5 @@
-## project2 주제
-- 유튜브의 댓글을 크롤링 하여 분류, 게임 콘텐즈의 평판을 분석한다.
+## project3 주제
+- 유튜브의 댓글을 크롤링 하여 분류, 강서구청장의 선거 결과를 예측한다.
 
 ## project 사용언어 
 - python(VScode, google colab)
