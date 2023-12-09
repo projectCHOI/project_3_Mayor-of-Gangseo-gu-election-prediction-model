@@ -70,3 +70,54 @@ duplicate_rows_kwon = df_kwon['comment'].duplicated().sum()
 print(f'jin 중복된 행의 개수: {duplicate_rows_jin}')
 print(f'kim 중복된 행의 개수: {duplicate_rows_kim}')
 print(f'kwon 중복된 행의 개수: {duplicate_rows_kwon}')
+
+import pandas as pd
+
+# 후보자별 결과 데이터 CSV 파일 읽기
+df_jin = pd.read_csv("/content/drive/MyDrive/SeSAC_AI 전문인력 양성/Project/2023년 강서구청장 보궐선거 예측분석/Raw Data/results_진교훈.csv")
+df_kim = pd.read_csv("/content/drive/MyDrive/SeSAC_AI 전문인력 양성/Project/2023년 강서구청장 보궐선거 예측분석/Raw Data/results_김태우.csv")
+df_kwon = pd.read_csv("/content/drive/MyDrive/SeSAC_AI 전문인력 양성/Project/2023년 강서구청장 보궐선거 예측분석/Raw Data/results_권수정.csv")
+
+# 각 데이터프레임의 기술적 분석 출력
+print("진교훈")
+print(df_jin.describe())
+print()
+
+print("김태우")
+print(df_kim.describe())
+print()
+
+print("권수정")
+print(df_kwon.describe())
+print()
+
+# 후보자별 '댓글' 열의 기술적 분석
+print("진교훈")
+print(df_jin["댓글"].describe())
+print()
+
+print("김태우")
+print(df_kim["댓글"].describe())
+print()
+
+print("권수정")
+print(df_kwon["댓글"].describe())
+print()
+
+# 후보자별 '작성자' 열의 중복 빈도수 계산
+duplicate_counts_jin = df_jin['작성자'].value_counts()
+duplicate_counts_kim = df_kim['작성자'].value_counts()
+duplicate_counts_kwon = df_kwon['작성자'].value_counts()
+
+# 중복 빈도수 출력
+print("진교훈")
+print(duplicate_counts_jin)
+print()
+
+print("김태우")
+print(duplicate_counts_kim)
+print()
+
+print("권수정")
+print(duplicate_counts_kwon)
+print()
