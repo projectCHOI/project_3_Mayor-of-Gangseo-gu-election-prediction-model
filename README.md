@@ -13,7 +13,7 @@
 - 데이터 수집 > 전처리 > 데이터 표준화 > 자연어 처리(NLP) > Sentiment analysis > 시각화
 
 ## Sentiment Analysis
-- 전문가 : (금융뉴스 분석 모델) [https://github.com/ukairia777/finance_sentiment_corpus]
+- KoELECTRA학습기 : [https://github.com/monologg/KoELECTRA]
 
 ## 시각화
 - pyLDAvis
